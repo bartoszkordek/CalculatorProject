@@ -2,8 +2,10 @@
 import pytest
 from calculator import Calculator
 
+
 class TestCalculator:
     '''Calculator test class'''
+
     @pytest.mark.parametrize("a,b,expected", [
         (-1, -2, -3),
         (-1, 0, -1),
