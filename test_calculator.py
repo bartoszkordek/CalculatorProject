@@ -1,9 +1,9 @@
+'''Calculator test module'''
 import pytest
 from calculator import Calculator
 
-
 class TestCalculator:
-
+    '''Calculator test class'''
     @pytest.mark.parametrize("a,b,expected", [
         (-1, -2, -3),
         (-1, 0, -1),
@@ -22,6 +22,7 @@ class TestCalculator:
         (1.111111111111, 1.111111111111, 2.222222222222),
     ])
     def test_add(self, a, b, expected):
+        '''Test of 'add' function'''
         calc = Calculator(a, b)
         assert calc.sum() == expected
 
@@ -43,6 +44,7 @@ class TestCalculator:
         (1.111111111111, 2.222222222222, -1.111111111111),
     ])
     def test_subtract(self, a, b, expected):
+        '''Test of 'subtract' function'''
         calc = Calculator(a, b)
         assert calc.subtract() == expected
 
@@ -64,6 +66,7 @@ class TestCalculator:
         (3.333333, -3.333333, -11.111108888889),
     ])
     def test_multiply(self, a, b, expected):
+        '''Test of 'multiply' function'''
         calc = Calculator(a, b)
         assert calc.multiply() == expected
 
@@ -73,6 +76,7 @@ class TestCalculator:
         (2, 1, 2),
     ])
     def test_divide(self, a, b, expected):
+        '''Test of 'divide' function with non-zero divider'''
         calc = Calculator(a, b)
         assert calc.divide() == expected
 
@@ -87,6 +91,7 @@ class TestCalculator:
         (0.000000000001, 0),
     ])
     def test_divide_by_zero(self, a, b):
+        '''Test of 'divide' function with zero divider'''
         calc = Calculator(a, b)
         with pytest.raises(ZeroDivisionError) as division_error:
             calc.divide()
