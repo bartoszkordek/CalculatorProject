@@ -15,7 +15,9 @@ The repository also includes a **pytest-based unit test suite** and a **GitHub A
 .
 ├── .github/
 │ └── workflows/ # GitHub Actions configuration for CI/CD
+├── .htmlcov/ # Coverage report
 ├── .gitignore # Files ignored by Git
+├── .coveragerc # Coverage configuration reference file
 ├── calculator.py # Main Calculator class implementation
 ├── requirements.txt # Python dependencies
 ├── test_calculator.py # Unit tests using pytest
