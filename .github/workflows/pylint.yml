@@ -26,3 +26,6 @@ jobs:
       run: |
         coverage run -m pytest
         coverage report
+    - name: Enforce minimum coverage (95%)
+      run: |
+        coverage report --fail-under=95
